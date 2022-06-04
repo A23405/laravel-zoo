@@ -10,9 +10,9 @@ class areasController extends Controller
 {
     protected $area;
 
-    public function __construct()
+    public function __construct(areaService $areaService)
     {
-        $this->area = new areaService();
+        $this->area = $areaService;
     }
     /**
      * Display a listing of the resource.
@@ -37,7 +37,6 @@ class areasController extends Controller
     public function store(Request $request)
     {
         //
-
         $file = $request->file('img');
         $result = $this->area->createarea($request, $file);
         return response()->json([
@@ -56,6 +55,12 @@ class areasController extends Controller
     public function show($id)
     {
         //
+        $result = $this->area->getOne($id);
+        return response()->json([
+            'dd' => 'dd HI Show',
+            'status' => '成功',
+            'req' => $result,
+        ],200);
     }
 
     /**
@@ -67,10 +72,10 @@ class areasController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $createarea = $this->area->updatearea($request, $id);
+        $file = $request->file('img');
+        $createarea = $this->area->updatearea($request, $id , $file);
         if (!$createarea) {
-            return response()->json(['status' => "新增失敗"], 400);
+            return response()->json(['status' => "修改失敗"], 400);
         }
         return response()->json([
             'dd' => 'dd HI Store',
