@@ -13,7 +13,6 @@ class speciesarchivesController extends Controller
     public function __construct(speciesarchivesService $speciesarchivesService)
     {
         $this->speciesarchives = $speciesarchivesService;
-        
     }
     /**
      * Display a listing of the resource.
@@ -22,13 +21,27 @@ class speciesarchivesController extends Controller
      */
     public function index()
     {
-        //
-        return response()->json([
+        // return response()->json([
+        //     'dd' => 'dd HI',
+        //     'speciesarchives' => $this->speciesarchives->getAllspeciesarchives(),
+        // ]);
+        return view('SpeciesArchivesTest', [
             'dd' => 'dd HI',
             'speciesarchives' => $this->speciesarchives->getAllspeciesarchives(),
         ]);
     }
 
+    public function search(Request $request)
+    {
+        // return response()->json([
+        //     'dd' => 'dd HI search',
+        //     'search' => $this->speciesarchives->getsearch(),
+        // ]);
+        return view('SpeciesArchivesTestSearch', [
+            'dd' => 'dd HI',
+            'speciesarchives' => $this->speciesarchives->getsearch($request),
+        ]);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -44,7 +57,7 @@ class speciesarchivesController extends Controller
             'dd' => 'dd HI Store',
             'status' => '新增成功',
             'req' => $result,
-        ],200);
+        ], 200);
     }
 
     /**
@@ -55,7 +68,13 @@ class speciesarchivesController extends Controller
      */
     public function show($id)
     {
-        //
+        $result = $this->speciesarchives->getOne($id);
+
+        return response()->json([
+            'dd' => 'dd HI Show',
+            'status' => '成功',
+            'req' => $result,
+        ], 200);
     }
 
     /**
@@ -69,7 +88,7 @@ class speciesarchivesController extends Controller
     {
         //
         $file = $request->file('img');
-        $result = $this->speciesarchives->updatespeciesarchives($request, $id , $file);
+        $result = $this->speciesarchives->updatespeciesarchives($request, $id, $file);
         if (!$result) {
             return response()->json(['status' => "修改失敗"], 400);
         }
@@ -99,4 +118,5 @@ class speciesarchivesController extends Controller
             'req' => $result,
         ], 200);
     }
+
 }

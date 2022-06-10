@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Intervention\Image\Facades\Image;
+use App\Http\Controllers\Api\areasController;
+use App\Http\Controllers\Api\speciesarchivesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,7 @@ use Intervention\Image\Facades\Image;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,4 +24,16 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+//場區
+Route::get('/area', [areasController::class, 'index']);
+
+//首頁
+Route::get('/speciesarchives', [speciesarchivesController::class, 'index']);
+// Route::get('/speciesarchives', function () {
+//     return view('SpeciesArchivesTest');
+// });
+Route::get('/speciesarchives_search', [speciesarchivesController::class, 'search']);
+
+
+
+require __DIR__ . '/auth.php';

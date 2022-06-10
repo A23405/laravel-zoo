@@ -34,4 +34,6 @@ Route::post('speciesarchives', [speciesarchivesController::class, 'store']);
 Route::patch('speciesarchives/{id}', [speciesarchivesController::class, 'update']);
 Route::delete('speciesarchives/{id}', [speciesarchivesController::class, 'destroy']);
 Route::get('speciesarchives/{id}', [speciesarchivesController::class, 'show']);
+
+Route::get('/speciesarchives_search', [speciesarchivesController::class, 'search']);
 //動物個資

@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->string('pid')->unique();
-            $table->string('name')->unique();;
-            $table->string('introduction')->nullable();//簡介
+            $table->string('name')->unique();
+            $table->string('introduction')->nullable(); //簡介
             $table->string('img')->nullable();
             $table->timestamps();
         });
@@ -30,6 +30,7 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('areas');
     }
 };

@@ -14,14 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('health_record', function (Blueprint $table) {
-            $table->string('aid')->primary();
+            $table->id();
+            $table->string('aid');
             $table->string('body_length');
             $table->string('weight');
-            $table->string('estrus');//發情
+            $table->string('estrus'); //發情
             $table->string('other');
             $table->timestamps();
 
-            $table->foreign('aid')->references('aid')->on('animalfile');
+            $table->foreign('aid')->references('aid')->on('animalfiles');
         });
     }
 

@@ -21,11 +21,14 @@ class areasController extends Controller
      */
     public function index()
     {
-        //
-        return response()->json([
-            'dd' => 'dd HI',
-            'areas' => $this->area->getAllarea(),
-        ]);
+        // return response()->json([
+        //     'dd' => 'dd HI',
+        //     'areas' => $this->area->getAllarea(),
+        // ]);
+        return view('AreaTest',[
+                'dd' => 'dd HI',
+                'areas' => $this->area->getAllarea(),
+            ]);
     }
 
     /**
@@ -43,7 +46,7 @@ class areasController extends Controller
             'dd' => 'dd HI Store',
             'status' => '新增成功',
             'req' => $result,
-        ],200);
+        ], 200);
     }
 
     /**
@@ -56,11 +59,12 @@ class areasController extends Controller
     {
         //
         $result = $this->area->getOne($id);
+
         return response()->json([
             'dd' => 'dd HI Show',
             'status' => '成功',
             'req' => $result,
-        ],200);
+        ], 200);
     }
 
     /**
@@ -73,7 +77,7 @@ class areasController extends Controller
     public function update(Request $request, $id)
     {
         $file = $request->file('img');
-        $createarea = $this->area->updatearea($request, $id , $file);
+        $createarea = $this->area->updatearea($request, $id, $file);
         if (!$createarea) {
             return response()->json(['status' => "修改失敗"], 400);
         }

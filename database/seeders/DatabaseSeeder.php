@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(areasSeeder::class);
+        $this->call(speciesarchivesSeeder::class);
+        $this->call(animalfileSeeder::class);
     }
 }

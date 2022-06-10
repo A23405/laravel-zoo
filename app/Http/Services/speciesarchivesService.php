@@ -1,11 +1,34 @@
 <?php
+
 namespace App\Http\Services;
 
 use App\Models\speciesarchives;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class speciesarchivesService
 {
+    //取得搜尋資料
+    public function getsearch($request)
+    {
+        if ($request->area == '' && $request->conservation_level == '') {
+            $result = DB::table('speciesarchives')->get();
+        } elseif($request->conservation_level == '') {
+            $result = DB::select('select * 
+            FROM speciesarchives
+            where area = ?', [$request->area]);
+        }elseif($request->area == ''){
+            $result = DB::select('select * 
+            FROM speciesarchives
+            where conservation_level = ?', [$request->conservation_level]);
+        }else{
+            $result = DB::select('select * 
+            FROM speciesarchives
+            where area = ? and conservation_level = ?', [$request->area,$request->conservation_level]);
+        }
+
+        return $result;
+    }
     //查詢全部
     public function getAllspeciesarchives()
     {
@@ -81,6 +104,13 @@ class speciesarchivesService
             Storage::delete($deletepath);
         }
         $result = speciesarchives::where('id', $id)->delete();
+        return $result;
+    }
+
+    //取單一資料
+    public function getOne($id)
+    {
+        $result = speciesarchives::where('id', $id)->first();
         return $result;
     }
 }

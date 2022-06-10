@@ -13,9 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('employee', function (Blueprint $table) {
-            $table->id();
+        Schema::create('animalfiles', function (Blueprint $table) {
+            $table->string('aid')->primary();
+            $table->string('name');
+            $table->string('species_');
+            $table->string('sex');
+            $table->date('birth');
+            $table->string('img')->nullable();
             $table->timestamps();
+
+            $table->foreign('species_')->references('species_')->on('speciesarchives');
         });
     }
 
@@ -26,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employee');
+        Schema::dropIfExists('animalfiles');
     }
 };
