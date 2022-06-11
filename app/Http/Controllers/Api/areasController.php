@@ -25,10 +25,10 @@ class areasController extends Controller
         //     'dd' => 'dd HI',
         //     'areas' => $this->area->getAllarea(),
         // ]);
-        return view('AreaTest',[
-                'dd' => 'dd HI',
-                'areas' => $this->area->getAllarea(),
-            ]);
+        return view('area', [
+            'dd' => 'dd HI',
+            'areas' => $this->area->getAllarea(),
+        ]);
     }
 
     /**

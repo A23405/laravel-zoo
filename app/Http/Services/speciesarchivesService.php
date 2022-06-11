@@ -13,18 +13,18 @@ class speciesarchivesService
     {
         if ($request->area == '' && $request->conservation_level == '') {
             $result = DB::table('speciesarchives')->get();
-        } elseif($request->conservation_level == '') {
+        } elseif ($request->conservation_level == '') {
             $result = DB::select('select * 
             FROM speciesarchives
             where area = ?', [$request->area]);
-        }elseif($request->area == ''){
+        } elseif ($request->area == '') {
             $result = DB::select('select * 
             FROM speciesarchives
             where conservation_level = ?', [$request->conservation_level]);
-        }else{
+        } else {
             $result = DB::select('select * 
             FROM speciesarchives
-            where area = ? and conservation_level = ?', [$request->area,$request->conservation_level]);
+            where area = ? and conservation_level = ?', [$request->area, $request->conservation_level]);
         }
 
         return $result;

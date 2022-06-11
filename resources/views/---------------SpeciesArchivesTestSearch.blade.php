@@ -36,9 +36,6 @@
             <option value="DD">資料不足（Data Deficient, DD）</option>
             <option value="NE">未評估（Not Evaluated, NE）</option>
         </select>
-        <!-- <input type="text" size="10" name="area" placeholder="area">
-    <input type="text" size="10" name="species" placeholder="species">
-    <input type="text" size="10" name="id" placeholder="id"> -->
         <input type="submit" value="送出">
     </form>
 

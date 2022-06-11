@@ -16,24 +16,19 @@ use App\Http\Controllers\Api\speciesarchivesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-//場區
-Route::get('/area', [areasController::class, 'index']);
+// ->middleware(['auth'])->name('dashboard'); 登入要用
 
 //首頁
-Route::get('/speciesarchives', [speciesarchivesController::class, 'index']);
+Route::get('/', [speciesarchivesController::class, 'index']);
+Route::get('/search', [speciesarchivesController::class, 'search']);
 // Route::get('/speciesarchives', function () {
 //     return view('SpeciesArchivesTest');
 // });
-Route::get('/speciesarchives_search', [speciesarchivesController::class, 'search']);
 
+
+//場區
+Route::get('/area', [areasController::class, 'index']);
 
 
 require __DIR__ . '/auth.php';

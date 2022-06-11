@@ -25,7 +25,7 @@ class speciesarchivesController extends Controller
         //     'dd' => 'dd HI',
         //     'speciesarchives' => $this->speciesarchives->getAllspeciesarchives(),
         // ]);
-        return view('SpeciesArchivesTest', [
+        return view('dashboard', [
             'dd' => 'dd HI',
             'speciesarchives' => $this->speciesarchives->getAllspeciesarchives(),
         ]);
@@ -37,7 +37,7 @@ class speciesarchivesController extends Controller
         //     'dd' => 'dd HI search',
         //     'search' => $this->speciesarchives->getsearch(),
         // ]);
-        return view('SpeciesArchivesTestSearch', [
+        return view('dashboardSearch', [
             'dd' => 'dd HI',
             'speciesarchives' => $this->speciesarchives->getsearch($request),
         ]);
@@ -118,5 +118,4 @@ class speciesarchivesController extends Controller
             'req' => $result,
         ], 200);
     }
-
 }

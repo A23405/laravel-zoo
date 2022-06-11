@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: azure;
+}
+
+header {
+  background-color: burlywood;
+}
+
+header .row {
+  width: 80%;
+}
+
+/* navbar */
+
+.navbar {
+  padding: 0 1rem;
+  background-color: burlywood;
+}
+.nav-item {
+  line-height: 36px;
+  background-color: #FFBD9D;
+  border-radius: 10px;
+  width: 60px;
+  margin-left: 10px;
+  text-align: center;
+}
+.nav-item:hover {
+  background-color: rgb(255, 202, 138);
+}
+
+/* searchBlock */
+.searchBlock {
+  background-color: bisque;
+}
+.searchBlock input {
+  height: 40px;
+}
+/* animalBlock*/
+.card{
+  border-radius: 25px;
+  background-color:#EFFFD7;
+}
+.card .imgBlock {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  border-radius: 25px;
+
+}
+.card .imgBlock img {
+  max-height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.card .imgBlock img:hover {
+  transform: scale(1.5);
+  transition: transform 0.4s ease-in-out 0s;
+}
+
+.card:hover img {
+  transform: scale(1.5);
+  transition: transform 0.4s ease-in-out 0s;
+}
