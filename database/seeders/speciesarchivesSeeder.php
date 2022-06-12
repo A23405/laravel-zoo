@@ -32,7 +32,7 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '大陸的秦嶺南坡、岷山、邛崍山和大、小相嶺及涼山6個山系。',
             'conservation_level' => 'VU',
             'area' => '亞洲動物區',
-            'img' => '',
+            'img' => '/storage/img/大熊貓.jpg',
         ]);
 
         $speciesarchives = speciesarchives::create([
@@ -50,7 +50,7 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '西至裏海和土耳其，東至俄羅斯和中國東南沿海，北至西伯利亞，南至印度尼西亞的爪哇島、峇里島和蘇門答臘島都有虎棲息分布。',
             'conservation_level' => 'EN',
             'area' => '亞洲動物區',
-            'img' => '',
+            'img' => '/storage/img/虎.jpg',
         ]);
 
         $speciesarchives = speciesarchives::create([
@@ -68,7 +68,7 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '台灣中央山脈',
             'conservation_level' => 'VU',
             'area' => '亞洲動物區',
-            'img' => '',
+            'img' => '/storage/img/臺灣黑熊.jpg',
         ]);
 
         $speciesarchives = speciesarchives::create([
@@ -86,7 +86,7 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '分布於臺灣由海平面至海拔三千公尺以下的地區。',
             'conservation_level' => 'LC',
             'area' => '亞洲動物區',
-            'img' => '',
+            'img' => '/storage/img/臺灣獼猴.jpg',
         ]);
 
         $speciesarchives = speciesarchives::create([
@@ -104,7 +104,7 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '以南、南亞、東南亞以至中國西南邊境的熱帶及亞熱帶地區。',
             'conservation_level' => 'EN',
             'area' => '亞洲動物區',
-            'img' => '',
+            'img' => '/storage/img/亞洲象.jpg',
         ]);
 
         //澳洲===============================================================================
@@ -123,7 +123,75 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '澳洲的東部昆士蘭州、新南威爾斯、南澳大利亚州和維多利亞地區低海拔、不密集的桉樹林中。',
             'conservation_level' => 'VU',
             'area' => '澳洲動物區',
-            'img' => '',
+            'img' => '/storage/img/無尾熊.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '紅大袋鼠',
+            'name' => '紅袋鼠',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '雙門齒目',
+            'family_' => '袋鼠科',
+            'genus_' => '大袋鼠屬',
+            'body_type' => '身長1.4米及重85公斤',
+            'scientific_name' => 'Macropus rufus',
+            'feeding_habits' => '吃草及其他植被。',
+            'feature' => '紅褐色的短毛，下身及四肢的毛色呈黃褐色。牠們的耳朵尖長。',
+            'distribution' => '澳洲大陸',
+            'conservation_level' => 'LC',
+            'area' => '澳洲動物區',
+            'img' => '/storage/img/紅袋鼠.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '羊駝',
+            'name' => '草泥馬',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '偶蹄目',
+            'family_' => '駱駝科',
+            'genus_' => '小羊駝屬',
+            'body_type' => '大約是70-90kg',
+            'scientific_name' => 'Vicugna pacos',
+            'feeding_habits' => '主要包括樹葉、青草、幹草等',
+            'feature' => '頭似駱駝，鼻樑隆起，兩耳豎立，脖頸細長，沒有駝峰。',
+            'distribution' => '澳洲的維多利亞州和新南威爾斯州，以及紐西蘭。',
+            'conservation_level' => 'EW',
+            'area' => '澳洲動物區',
+            'img' => '/storage/img/羊駝.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '西蘇門答臘犀',
+            'name' => '蘇門答臘犀',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '奇蹄目',
+            'family_' => '犀科',
+            'genus_' => '雙角犀屬',
+            'body_type' => '肩高約135公分，體長240~315公分，體重800~1000公斤',
+            'scientific_name' => 'Dicerorhinus sumatrensis',
+            'feeding_habits' => '以植物嫩葉、嫩芽、細枝、樹苗和水果為食',
+            'feature' => '皮膚呈灰褐色，厚10–16公釐。 全身覆有粗糙的紅棕色被毛，耳部和尾端有較長的鬃毛。',
+            'distribution' => '蘇門答臘島與馬來半島',
+            'conservation_level' => 'CR',
+            'area' => '澳洲動物區',
+            'img' => '/storage/img/蘇門答臘犀.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '灣鱷',
+            'name' => '灣鱷',
+            'phylum_' => '脊索動物門',
+            'class_' => '爬行綱',
+            'order_' => '鱷目',
+            'family_' => '鱷科',
+            'genus_' => '鱷屬',
+            'body_type' => '體長可達5~6米以上，體重可達300公斤至400公斤',
+            'scientific_name' => 'Crocodylus porosus',
+            'feeding_habits' => '主要以泥蟹、龜、巨蜥及水鳥為食',
+            'feature' => '成體呈褐色，腹部淡黃色或白色，尾巴底部末端灰色。',
+            'distribution' => '於澳洲北部及巴布亞紐幾內亞',
+            'conservation_level' => 'LC',
+            'area' => '澳洲動物區',
+            'img' => '/storage/img/灣鱷.jpg',
         ]);
         //非洲===============================================================================
         $speciesarchives = speciesarchives::create([
@@ -141,7 +209,75 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '非洲北部山區',
             'conservation_level' => 'VU',
             'area' => '非洲動物區',
-            'img' => '',
+            'img' => '/storage/img/巴巴里羊.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '努比亞長頸鹿',
+            'name' => '長頸鹿',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '偶蹄目',
+            'family_' => '長頸鹿科',
+            'genus_' => '長頸鹿屬',
+            'body_type' => '個體高達4.8到5.5米高，重達900公斤',
+            'scientific_name' => 'Giraffa',
+            'feeding_habits' => '食用含羞草亞科為主的木本植物的樹葉、水果以及花朵為生。',
+            'feature' => '斑點呈四方形，栗色；底色為白色。腿內側及上肢以下無斑點。',
+            'distribution' => '蘇丹東部及剛果東北部',
+            'conservation_level' => 'VU',
+            'area' => '非洲動物區',
+            'img' => '/storage/img/長頸鹿.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '獅',
+            'name' => '獅子',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '食肉目',
+            'family_' => '貓科',
+            'genus_' => '豹屬',
+            'body_type' => '重110–150公斤',
+            'scientific_name' => 'Panthera leo',
+            'feeding_habits' => '大多捕食大型和中型的動物。',
+            'feature' => '毛髮短，體色有淺灰、黃色或茶色，雄獅還有很長的鬃毛，顏色有淡棕色、深棕色、黑色等等，一直延伸到肩部和胸部。',
+            'distribution' => '非洲撒哈拉沙漠以南',
+            'conservation_level' => 'VU',
+            'area' => '非洲動物區',
+            'img' => '/storage/img/獅子.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '豹',
+            'name' => '非洲豹',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '食肉目',
+            'family_' => '貓科',
+            'genus_' => '豹屬',
+            'body_type' => '體重可以達到90公斤左右，體長可達1.67米',
+            'scientific_name' => 'Panthera pardus pardus',
+            'feeding_habits' => '最常捕獵黑斑羚，麂羚等小型羚羊',
+            'feature' => '頭小尾長，四肢短健、尾尖粗重。',
+            'distribution' => '非洲南部',
+            'conservation_level' => 'NT',
+            'area' => '非洲動物區',
+            'img' => '/storage/img/豹.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '細紋斑馬',
+            'name' => '斑馬',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '偶蹄目',
+            'family_' => '馬科',
+            'genus_' => '馬屬',
+            'body_type' => '體長為2.5-3米，肩高1.25~1.6米，體重為350-450千克。',
+            'scientific_name' => 'Equus grevyi',
+            'feeding_habits' => '以草為食，同時也吃水果、灌木和樹皮。',
+            'feature' => '耳很大，呈圓錐形。頭部長而窄，形狀十分接近騾。',
+            'distribution' => '非洲的肯尼亞和埃塞俄比亞。',
+            'conservation_level' => 'EN',
+            'area' => '非洲動物區',
+            'img' => '/storage/img/斑馬.jpg',
         ]);
         //雨林===============================================================================
         $speciesarchives = speciesarchives::create([
@@ -159,8 +295,43 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '巴西、巴拉圭、委內瑞拉的河、湖泊、窪地和森林中植物豐盛的池塘、溪流邊和沼澤地，一般棲息於植物繁茂的沼澤地中',
             'conservation_level' => 'LC',
             'area' => '雨林動物區',
-            'img' => '',
+            'img' => '/storage/img/水豚.jpg',
         ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '馬來貘',
+            'name' => '馬來貘',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '奇蹄目',
+            'family_' => '貘科',
+            'genus_' => '貘屬',
+            'body_type' => '體長為1.8~2.5米，站立高度有90至110 公分，重量約250~320公斤',
+            'scientific_name' => 'Tapirus indicus',
+            'feeding_habits' => '喜好植物的嫩枝芽、樹葉、水果、草及水生植物',
+            'feature' => '黑白相間，全身中後段為白色體毛，其餘為黑色；耳朵豎立，耳緣末端為白色。',
+            'distribution' => '於東南亞，從緬甸南部到泰國、馬來半島和蘇門答臘。',
+            'conservation_level' => 'EN',
+            'area' => '雨林動物區',
+            'img' => '/storage/img/馬來貘.jpg',
+        ]);
+        $speciesarchives = speciesarchives::create([
+            'species_' => '西部大猩猩',
+            'name' => '大猩猩',
+            'phylum_' => '脊索動物門',
+            'class_' => '哺乳綱',
+            'order_' => '靈長目',
+            'family_' => '人科',
+            'genus_' => '大猩猩屬',
+            'body_type' => '站立時高6呎及重約450磅',
+            'scientific_name' => 'Gorilla gorilla gorilla',
+            'feeding_habits' => '果實、葉子和根，其中葉子占主要部分',
+            'feature' => '是褐色及灰色的，前額呈紅色，鼻端起鉤。',
+            'distribution' => '於剛果、加彭、喀麥隆、中非、赤道幾內亞、奈及利亞',
+            'conservation_level' => 'CR',
+            'area' => '雨林動物區',
+            'img' => '/storage/img/猩猩.jpg',
+        ]);
+
         //沙漠===============================================================================
         $speciesarchives = speciesarchives::create([
             'species_' => '單峰駱駝',
@@ -177,7 +348,7 @@ class speciesarchivesSeeder extends Seeder
             'distribution' => '北非洲和西亞洲、印度等熱帶地區',
             'conservation_level' => 'NE',
             'area' => '沙漠動物區',
-            'img' => '',
+            'img' => '/storage/img/駱駝.jpg',
         ]);
     }
 }

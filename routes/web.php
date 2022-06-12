@@ -25,8 +25,10 @@ Route::get('/search', [speciesarchivesController::class, 'search']);
 // Route::get('/speciesarchives', function () {
 //     return view('SpeciesArchivesTest');
 // });
-
-
+//動物各檔
+Route::get('/animal_file', function () {
+    return view('animal_file');
+})->name('animal_file');
 //場區
 Route::get('/area', [areasController::class, 'index']);
 

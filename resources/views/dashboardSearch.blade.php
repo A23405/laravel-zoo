@@ -30,11 +30,11 @@
                 <div class="col-6 col-lg-2">
                     <input list="order_" name="order_" placeholder="查詢目類：食肉目" class="my-1 w-100" />
                     <datalist id="order_">
-                        <option value="貓熊"></option>
-                        <option value="大熊"></option>
-                        <option value="狗熊"></option>
-                        <option value="野熊"></option>
-                        <option value="無尾熊"></option>
+                        <option value="食肉目"></option>
+                        <option value="靈長目"></option>
+                        <option value="長鼻目"></option>
+                        <option value="雙門齒目"></option>
+                        <option value="奇蹄目"></option>
                     </datalist>
                 </div>
                 <div class="col-6 col-lg-2">
@@ -70,7 +70,7 @@
                             <div class="p-3">
                                 <h3 class="card-title">{{$species->species_}}</h3>
                                 <p>{{$species->area}}</p>
-                                <p>數量:8</p>
+                                <p>數量:{{$species->total}}</p>
                             </div>
                         </div>
                     </div>

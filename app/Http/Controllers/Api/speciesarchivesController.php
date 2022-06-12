@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\speciesarchivesService;
+use Illuminate\Support\Facades\DB;
 
 class speciesarchivesController extends Controller
 {
@@ -28,6 +29,7 @@ class speciesarchivesController extends Controller
         return view('dashboard', [
             'dd' => 'dd HI',
             'speciesarchives' => $this->speciesarchives->getAllspeciesarchives(),
+            'areas'=> DB::select("select * from areas"),
         ]);
     }
 

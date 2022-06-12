@@ -11,28 +11,61 @@ class speciesarchivesService
     //取得搜尋資料
     public function getsearch($request)
     {
-        if ($request->area == '' && $request->conservation_level == '') {
-            $result = DB::table('speciesarchives')->get();
-        } elseif ($request->conservation_level == '') {
-            $result = DB::select('select * 
-            FROM speciesarchives
-            where area = ?', [$request->area]);
-        } elseif ($request->area == '') {
-            $result = DB::select('select * 
-            FROM speciesarchives
-            where conservation_level = ?', [$request->conservation_level]);
+        $sql = 'select a.id,a.species_,a.order_,a.area,a.img,a.conservation_level,count(a.aid) as total
+        from(SELECT a.id ,a.species_ ,a.order_,a.area,a.img,a.conservation_level	,b.aid,b.name
+        FROM speciesarchives as a
+        left JOIN animalfiles as b on a.species_ = b.species_) as a
+        where';
+
+        if ($request->area == '' && $request->order_ == '' && $request->conservation_level == '') {
+            $result = DB::select('select a.id,a.species_,a.area,a.img,a.conservation_level,count(a.aid) as total
+            from(SELECT a.id ,a.species_ ,a.area,a.img,a.conservation_level	,b.aid,b.name
+            FROM speciesarchives as a
+            left JOIN animalfiles as b on a.species_ = b.species_) as a
+            GROUP by a.species_
+            ORDER by a.id');
         } else {
-            $result = DB::select('select * 
-            FROM speciesarchives
-            where area = ? and conservation_level = ?', [$request->area, $request->conservation_level]);
+            if ($request->area != '') {
+                $sql .= " area = '$request->area'";
+                if ($request->order_ != '') {
+                    $sql .= " and order_ = '$request->order_'";
+                    if ($request->conservation_level != '') {
+                        $sql .= " and conservation_level = '$request->conservation_level'";
+                    }
+                } else {
+                    if ($request->conservation_level != '') {
+                        $sql .= " and conservation_level = '$request->conservation_level'";
+                    }
+                }
+            } else {
+                if ($request->order_ != '') {
+                    $sql .= " order_ = '$request->order_'";
+                    if ($request->conservation_level != '') {
+                        $sql .= " and conservation_level = '$request->conservation_level'";
+                    }
+                } else {
+                    if ($request->conservation_level != '') {
+                        $sql .= " conservation_level = '$request->conservation_level'";
+                    }
+                }
+            }
         }
+        $sql .= 'GROUP by a.species_
+        ORDER by a.id';
+        $result = DB::select($sql);
 
         return $result;
     }
     //查詢全部
     public function getAllspeciesarchives()
     {
-        $result = speciesarchives::orderBy('created_at')->get();
+
+        $result = DB::select('select a.id,a.species_,a.area,a.img,a.conservation_level,count(a.aid) as total
+        from(SELECT a.id ,a.species_ ,a.area,a.img,a.conservation_level	,b.aid,b.name
+        FROM speciesarchives as a
+        left JOIN animalfiles as b on a.species_ = b.species_) as a
+        GROUP by a.species_
+        ORDER by a.id');
         return $result;
     }
 

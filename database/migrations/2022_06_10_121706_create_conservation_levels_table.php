@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('health_records', function (Blueprint $table) {
-            $table->id();
-            $table->string('aid');
-            $table->string('body_length');
-            $table->string('weight');
-            $table->string('estrus'); //發情
-            $table->string('other');
+        Schema::create('conservation_levels', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->string('content');
             $table->timestamps();
-
-            $table->foreign('aid')->references('aid')->on('animalfiles');
         });
     }
 
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('health_record');
+        Schema::dropIfExists('conservation_levels');
     }
 };
