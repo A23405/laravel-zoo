@@ -31,4 +31,5 @@ Route::get('/search', [speciesarchivesController::class, 'search']);
 Route::get('/area', [areasController::class, 'index']);
 
 
+
 require __DIR__ . '/auth.php';
