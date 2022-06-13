@@ -32,29 +32,28 @@ Route::get('/animal_file', function () {
 //場區
 Route::get('/area', [areasController::class, 'index']);
 
-
-//後台
-
+//後台==========================================================================
 //首頁
-Route::get('/back_main', function () {
-    return view('back_main');
-});
-//
-Route::get('/back_areacontrol', function () {
-    return view('back_areacontrol');
-});
-Route::get('/back_breed_male', function () {
-    return view('back_breed_male');
-});
-Route::get('/back_health', function () {
-    return view('back_health');
-});
-Route::get('/back_hospital', function () {
-    return view('back_hospital');
-});
+Route::get('/back_main', [speciesarchivesController::class, 'backindex'])->name('back_main');
+//健康紀錄
+Route::get('/back_health_record', function () {
+    return view('back_health_record');
+})->name('back_health_record');
+//就診紀錄
+Route::get('/back_medical_record', function () {
+    return view('back_medical_record');
+})->name('back_medical_record');
+//繁殖紀錄
+Route::get('/back_breed_record', function () {
+    return view('back_breed_record');
+})->name('back_breed_record');
+//場區
+Route::get('/back_area', function () {
+    return view('back_area');
+})->name('back_area');
+//人員管理
 Route::get('/back_manager', function () {
     return view('back_manager');
-});
-
+})->name('back_manager');
 
 require __DIR__ . '/auth.php';

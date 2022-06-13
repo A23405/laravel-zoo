@@ -7,10 +7,10 @@
     <meta name="description" content="" />
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Hugo 0.88.1" />
-    <title>Sidebars</title>
+    <title>@yield('title')</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css" />
     <!-- http://127.0.0.1:5500/sidebars/test.html -->
 
     <!-- Bootstrap core CSS -->
@@ -104,7 +104,7 @@
                 <hr>
                 <ul class="list-unstyled ps-0">
                     <li class="mb-1">
-                        <a href="{{asset('back_main')}}">
+                        <a href="{{route('back_main')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
                                 首頁
                             </button>
@@ -116,13 +116,13 @@
                         </button>
                         <div class="collapse" id="dashboard-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="{{asset('back_health')}}" class="link-dark rounded">個別紀錄</a></li>
-                                <li><a href="{{asset('back_hospital')}}" class="link-dark rounded">就診紀錄</a></li>
+                                <li><a href="{{route('back_health_record')}}" class="link-dark rounded">個別紀錄</a></li>
+                                <li><a href="{{route('back_medical_record')}}" class="link-dark rounded">就診紀錄</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="mb-1">
-                        <a href="{{asset('back_breed_male')}}">
+                        <a href="{{route('back_breed_record')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                                 繁殖紀錄
                             </button>
@@ -130,16 +130,15 @@
 
                     </li>
                     <li class="mb-1">
-                        <a href="{{asset('back_areacontrol')}}">
+                        <a href="{{route('back_area')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                                 場區
                             </button>
                         </a>
-
                     </li>
                     <li class="border-top my-3"></li>
                     <li class="mb-1">
-                        <a href="{{asset('back_manager')}}">
+                        <a href="{{route('back_manager')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                                 人員管理
                             </button>
@@ -154,10 +153,10 @@
         </div>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="{{ asset('js/sidebars.js') }}"></script>
 <script src="{{ asset('js/upload.js') }}"></script>
 

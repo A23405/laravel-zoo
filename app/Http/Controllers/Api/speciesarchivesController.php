@@ -20,6 +20,7 @@ class speciesarchivesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //前台首頁用
     public function index()
     {
         // return response()->json([
@@ -32,7 +33,6 @@ class speciesarchivesController extends Controller
             'areas'=> DB::select("select * from areas"),
         ]);
     }
-
     public function search(Request $request)
     {
         // return response()->json([
@@ -42,6 +42,18 @@ class speciesarchivesController extends Controller
         return view('dashboardSearch', [
             'dd' => 'dd HI',
             'speciesarchives' => $this->speciesarchives->getsearch($request),
+        ]);
+    }
+    //後台首頁用
+    public function backindex()
+    {
+        // return response()->json([
+        //     'dd' => 'dd HI search',
+        //     'speciesarchives' => $this->speciesarchives->getall(),
+        // ]);
+        return view('back_main', [
+            'dd' => 'dd HI back',
+            'speciesarchives' => $this->speciesarchives->getall(),
         ]);
     }
     /**

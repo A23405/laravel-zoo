@@ -7,6 +7,7 @@
     <title>小檔案</title>
 </head>
 @extends('layouts.back_sidebar')
+@section('title','物種首頁')
 @section('content')
 <div class="px-2" id="wrapper">
     <div class="row direction-colum px-3">
@@ -149,7 +150,61 @@
         </nav>
         <div class="container-fluid ms-2 px-5 py-3">
             <div class="row justify-content-around">
+                @foreach ($speciesarchives as $species)
                 <div class="col-sm-12 col-lg-5">
+                    <div class="row">
+                        <div class="card mt-3">
+                            <div class="row g-0">
+                                <div class="col-md-5 d-flex align-items-center">
+                                    <div class="imgBlock">
+                                        <img class="w-100 hoverImg" src="{{$species->img}}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body row">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-6" id="left">
+                                                    <p>門:{{$species->phylum_}}</p>
+                                                    <p>綱:{{$species->class_}}</p>
+                                                    <p>目:{{$species->order_}}</p>
+                                                    <p>科:{{$species->family_}}</p>
+                                                    <p>屬:{{$species->genus_}}</p>
+                                                    <p>保育等級:{{$species->conservation_level}}</p>
+                                                </div>
+                                                <div class="col-6" id="right">
+                                                    <p>物種:{{$species->species_ }}</p>
+                                                    <p>體型:{{$species->body_type}}</p>
+                                                    <p>學名:{{$species->scientific_name}}</p>
+                                                    <p>食性:{{$species->feeding_habits}}</p>
+                                                    <p>分布:{{$species->distribution}}</p>
+                                                    <p>所在場區:{{$species->area}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <p>
+                                                特徵:{{$species->feature}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button type="button" class="btn btn-success mx-1">
+                                        修改
+                                    </button>
+                                    <button type="button" class="btn btn-danger mx-1">
+                                        刪除
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                <!-- <div class="col-sm-12 col-lg-5">
                     <div class="row">
                         <div class="card mt-3">
                             <div class="row g-0">
@@ -200,7 +255,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-sm-12 col-lg-5">
                     <div class="row">
                         <div class="card mt-3">

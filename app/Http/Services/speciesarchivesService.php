@@ -8,7 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class speciesarchivesService
 {
-    //取得搜尋資料
+    //後台取得全部
+    public function getall()
+    {
+        $result = speciesarchives::all();
+        return $result;
+    }
+    //前台取得搜尋資料
     public function getsearch($request)
     {
         $sql = 'select a.id,a.species_,a.order_,a.area,a.img,a.conservation_level,count(a.aid) as total
@@ -56,7 +62,7 @@ class speciesarchivesService
 
         return $result;
     }
-    //查詢全部
+    //前台查詢全部
     public function getAllspeciesarchives()
     {
 
