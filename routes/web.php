@@ -33,5 +33,10 @@ Route::get('/animal_file', function () {
 Route::get('/area', [areasController::class, 'index']);
 
 
+//後台
+//首頁
+Route::get('/back_main', function () {
+    return view('back_main');
+});
 
 require __DIR__ . '/auth.php';

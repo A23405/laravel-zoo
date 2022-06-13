@@ -61,7 +61,7 @@
         <div class="row">
             @foreach ($speciesarchives as $species)
             <div class="col-6 col-lg-3 my-1">
-                <a href="{{ asset('animal_file') }}" class="m-3">
+                <a href="{{route('animal_file',['id'=>$species->id])}}" class="m-3">
                     <div class="card">
                         <div class="imgBlock">
                             <img class="card-img-top w-100 hoverImg" src={{$species->img}} />
