@@ -26,22 +26,20 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse d-flex flex-row" id="navbarSupportedContent">
-                <ul class="navbar-nav flex-row">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{{ asset('') }}">首頁</a>
+            <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+                <ul class="navbar-nav col-12 flex-row">
+                    <li class="nav-item d-flex justify-content-center align-items-center">
+                        <a class="nav-link d-flex justify-content-center align-items-center" href="{{asset('')}}">首頁</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ asset('area') }}">場區</a>
+                    <li class="nav-item d-flex justify-content-center align-items-center">
+                        <a class="nav-link d-flex justify-content-center align-items-center" href="{{asset('area')}}">場區</a>
+                    </li>
+                    <li class="nav-item ms-lg-auto">
+                        <a class="nav-link d-flex justify-content-center flex-column" href="#">
+                            登入
+                        </a>
                     </li>
                 </ul>
-                <div class="nav-item ms-lg-auto">
-                    <a class="nav-link align-items-center justify-content-center" href="#">
-                        <img src="img/user.png" class="img-fluid" width="40" height="40" />
-                        <span>管理員登入</span>
-                    </a>
-                </div>
             </div>
         </nav>
         <main>
