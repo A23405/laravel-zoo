@@ -38,5 +38,7 @@ Route::get('/area', [areasController::class, 'index']);
 Route::get('/back_main', function () {
     return view('back_main');
 });
+//
+
 
 require __DIR__ . '/auth.php';
