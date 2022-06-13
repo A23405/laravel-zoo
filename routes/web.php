@@ -34,11 +34,27 @@ Route::get('/area', [areasController::class, 'index']);
 
 
 //後台
+
 //首頁
 Route::get('/back_main', function () {
     return view('back_main');
 });
 //
+Route::get('/back_areacontrol', function () {
+    return view('back_areacontrol');
+});
+Route::get('/back_breed_male', function () {
+    return view('back_breed_male');
+});
+Route::get('/back_health', function () {
+    return view('back_health');
+});
+Route::get('/back_hospital', function () {
+    return view('back_hospital');
+});
+Route::get('/back_manager', function () {
+    return view('back_manager');
+});
 
 
 require __DIR__ . '/auth.php';

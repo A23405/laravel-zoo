@@ -7,15 +7,14 @@
     <meta name="description" content="" />
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Hugo 0.88.1" />
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Sidebars</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css" />
     <!-- http://127.0.0.1:5500/sidebars/test.html -->
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="styleshet" href="css/sidebars.css" />
+    <link rel="styleshet" href="{{ asset('css/sidebars.css')}}" />
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -35,9 +34,6 @@
             border: 5px pink solid;
         }
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="sidebars.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -108,7 +104,7 @@
                 <hr>
                 <ul class="list-unstyled ps-0">
                     <li class="mb-1">
-                        <a href="test.html">
+                        <a href="{{asset('back_main')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
                                 首頁
                             </button>
@@ -120,13 +116,13 @@
                         </button>
                         <div class="collapse" id="dashboard-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="allhealth.html" class="link-dark rounded">個別紀錄</a></li>
-                                <li><a href="hospital.html" class="link-dark rounded">就診紀錄</a></li>
+                                <li><a href="{{asset('back_health')}}" class="link-dark rounded">個別紀錄</a></li>
+                                <li><a href="{{asset('back_hospital')}}" class="link-dark rounded">就診紀錄</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="mb-1">
-                        <a href="breed_male.html">
+                        <a href="{{asset('back_breed_male')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                                 繁殖紀錄
                             </button>
@@ -134,7 +130,7 @@
 
                     </li>
                     <li class="mb-1">
-                        <a href="areacontrol.html">
+                        <a href="{{asset('back_areacontrol')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                                 場區
                             </button>
@@ -143,7 +139,7 @@
                     </li>
                     <li class="border-top my-3"></li>
                     <li class="mb-1">
-                        <a href="manager.html">
+                        <a href="{{asset('back_manager')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                                 人員管理
                             </button>
@@ -152,11 +148,17 @@
                     </li>
                 </ul>
             </div>
-            @yield('content')
-            <script src="http://code.jquery.com/jquery-latest.js"></script>
-            <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="js/sidebars.js"></script>
-            <script src="js/upload.js"></script>
+            <main style="width: 100vh;">
+                @yield('content')
+            </main>
+        </div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="{{ asset('js/sidebars.js') }}"></script>
+<script src="{{ asset('js/upload.js') }}"></script>
 
 </html>
