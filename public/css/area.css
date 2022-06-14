@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: 	#00EC00;
+    background-color: #c8d5b9;
 }
 
 header .row {
@@ -20,7 +20,7 @@ header .row {
   /* navbar */
 .navbar {
     padding: 0 1rem;
-    background-color: 	#00EC00;
+    background-color: #c8d5b9;
 }
 .nav-item {
     line-height: 36px;
@@ -50,7 +50,8 @@ header .row {
     position: absolute;
     left: 0px;
     border-radius: 4px;
-    /* object-fit: cover; */
+    object-fit: cover;
+    object-position: center center;
 }
 
 .card .imgBlock img:hover {

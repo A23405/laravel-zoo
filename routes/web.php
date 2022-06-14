@@ -55,7 +55,7 @@ Route::get('/back_area', function () {
 Route::get('/back_manager', function () {
     return view('back_manager');
 })->name('back_manager');
-Route::get('/back_animal', function () {
+Route::get('/back_individualanimal', function () {
     return view('back_individualanimal');
 })->name('back_individualanimal');
 

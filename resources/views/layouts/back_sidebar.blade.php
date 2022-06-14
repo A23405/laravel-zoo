@@ -143,7 +143,7 @@
                             </button>
                         </a>
                     </li>
-                    <li class="border-top my-3">
+                    <li class="my-3">
                         <hr>
                     </li>
                     <li class="mb-1">

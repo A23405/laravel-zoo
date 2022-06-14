@@ -9,8 +9,8 @@
 @section('title','繁殖紀錄')
 @section('content')
 <div id="wrapper">
-    <div class="container-fluid row direction-column">
-        <nav class="navbar navbar-expand-lg bg-light col-12 py-3">
+    <div class="container-fluid direction-column px-0">
+        <nav class="navbar navbar-expand-lg bg-light p-3">
             <div class="container-fluid">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
                     新增繁殖紀錄
@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="row justify-content-around">
-                                        <input type="submit" value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
+                                        <input value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
                                         <input type="submit" value="Add" class="btn btn-primary col-4">
                                     </div>
                                 </form>
@@ -166,7 +166,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="row justify-content-around">
-                                                                <input type="submit" value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
+                                                                <input value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
                                                                 <input type="submit" value="Add" class="btn btn-primary col-4">
                                                             </div>
                                                         </form>

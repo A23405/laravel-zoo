@@ -12,9 +12,9 @@
     </x-slot>
     <div class="container-fluid searchBlock px-lg-5 py-3 mb-3">
         <div class="row align-items-center justify-content-center ">
-            <form method="get" action="/search" class="col-12 ">
+            <form method="get" action="/search" class="col-8 ">
                 <div class="row align-items-center">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3 searchbox">
                         <input list="area" name="area" placeholder="請選擇場區" class="my-1 w-100" />
                         <datalist id="area">
                             <option value="亞洲動物區">亞洲動物區</option>
@@ -24,7 +24,7 @@
                             <option value="非洲動物區">非洲動物區</option>
                         </datalist>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3 searchbox">
                         <input list="order_" name="order_" placeholder="查詢目類：食肉目" class="my-1 w-100" />
                         <datalist id="order_">
                             <option value="食肉目"></option>
@@ -34,7 +34,7 @@
                             <option value="奇蹄目"></option>
                         </datalist>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-3 searchbox">
                         <input list="conservation_level" name="conservation_level" placeholder="保育等級" class="my-1 w-100" />
                         <datalist id="conservation_level">
                             <option value="EX">滅絕（Extinct, EX）</option>
@@ -49,7 +49,7 @@
                         </datalist>
                     </div>
                     <div class="col-6 col-md-3">
-                        <input type="submit" value="搜尋" class="btn btn-warning w-100">
+                        <input type="submit" value="搜尋" class="btn btn-warning w-100" id="search">
                     </div>
                 </div>
 
@@ -61,7 +61,7 @@
             @foreach ($speciesarchives as $species)
             <div class="col-6 col-lg-3 my-1">
                 <a href="{{route('animal_file',['id'=>$species->id])}}" class="m-3">
-                    <div class="card">
+                    <div class="card my-3">
                         <div class="imgBlock">
                             <img class="card-img-top w-100 hoverImg" src={{$species->img}} />
                         </div>

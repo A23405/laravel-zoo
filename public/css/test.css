@@ -6,11 +6,11 @@
 body {
   width: 100%;
   height: 100%;
-  background-color:#27ba7e;
+  background-color:#faf3dd;
 }
 
 header {
-  background-color: #00EC00;
+  background-color: #c8d5b9;
 }
 
 header .row {
@@ -18,14 +18,15 @@ header .row {
 }
 
 /* navbar */
-
+nav{
+  background-color: #c8d5b9;
+}
 .navbar {
   padding: 0 1rem;
-  background-color: #00BB00;
 }
 .nav-item {
   line-height: 36px;
-  background-color: #FFFF37;
+  background-color: #c8d5b9;
   border-radius: 10px;
   width: 60px;
   margin-left: 10px;
@@ -33,22 +34,28 @@ header .row {
 }
 
 .nav-item:hover {
-  background-color: #FFE153;
+  background-color: #73bfb8;
 }
 
 /* searchBlock */
-.searchBlock {
-  background-color: #82D900;
-}
+
 
 .searchBlock input {
   height: 40px;
 }
-
+#search{
+  background-color: #89b0ae;
+  border:#89b0ae ;
+}
+.searchbox input{
+  border-radius: 5px;
+  outline: none;
+}
 /* animalBlock*/
 .card{
   border-radius: 25px;
-  background-color: #02F78E;
+  background-color: rgba(74 ,124 ,89, 0.2);
+  color: #4a7c59;
 }
 
 .card .imgBlock {
@@ -67,7 +74,8 @@ header .row {
   position: absolute;
   left: 0px;
   border-radius: 4px;
-  /* object-fit: cover; */
+  object-fit: cover;
+  object-position: top center;
 }
 
 .card .imgBlock img:hover {
@@ -78,4 +86,7 @@ header .row {
 .card:hover img {
   transform: scale(1.5);
   transition: transform 0.4s ease-in-out 0s;
+}
+a{
+  text-decoration: none;
 }
