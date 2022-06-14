@@ -14,14 +14,14 @@
         <nav class="navbar navbar-expand-lg bg-light col-12 py-3">
             <div class="container-fluid">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-                    新增場區
+                    新增個別動物
                 </button>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content row justify-content-center">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">
-                                    新增場區
+                                    新增個別動物
                                 </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
@@ -48,12 +48,36 @@
                                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                             </div>
                                             <div class="input-group input-group-sm mb-3">
-                                                <span class="input-group-text" id="inputGroup-sizing-sm">場區名稱</span>
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">名字</span>
                                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                                             </div>
-                                            <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px"></textarea>
-                                                <label for="floatingTextarea">場區介紹</label>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">物種</span>
+                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                            </div>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <p>選擇性別</p>
+                                                <div class="form-check mx-1">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        M
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        F
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="input-group input-group-sm mb-3">
+                                                <label for="">選擇日期：</label>
+                                                <div class="input-group date" id='date1'>
+                                                    <input type="text" class="form-control" />
+                                                    <span class="input-group-addon">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -198,4 +222,5 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/upload.js') }}"></script>
 @endsection

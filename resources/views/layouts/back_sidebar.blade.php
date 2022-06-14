@@ -106,7 +106,14 @@
                     <li class="mb-1">
                         <a href="{{route('back_main')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                                首頁
+                                物種
+                            </button>
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="{{route('back_individualanimal')}}">
+                            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                                動物檔案
                             </button>
                         </a>
                     </li>
@@ -136,7 +143,9 @@
                             </button>
                         </a>
                     </li>
-                    <li class="border-top my-3"></li>
+                    <li class="border-top my-3">
+                        <hr>
+                    </li>
                     <li class="mb-1">
                         <a href="{{route('back_manager')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
@@ -147,7 +156,7 @@
                     </li>
                 </ul>
             </div>
-            <main style="width: 100vh;">
+            <main class="container-fluid px-0">
                 @yield('content')
             </main>
         </div>

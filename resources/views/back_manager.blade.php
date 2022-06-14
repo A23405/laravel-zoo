@@ -4,12 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="{{ asset('css/sidebars.css') }}">
-    <title>小檔案</title>
 </head>
 @extends('layouts.back_sidebar')
 @section('content')
-<div id="wrapper" style="width: 100vh;">
-    <div class="row direction-column">
+<div id="wrapper">
+    <div class="container-fluid row direction-column">
         <nav class="navbar navbar-expand-lg bg-light col-12 py-3">
             <div class="container-fluid">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">新增帳號</button>
@@ -33,11 +32,16 @@
                                     <label for="exampleDropdownFormPassword2" class="form-label">密碼</label>
                                     <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
                                 </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormPassword2" class="form-label">電話</label>
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                                </div>
+                                <div class="row justify-content-around">
+                                    <input type="submit" value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
+                                    <input type="submit" value="Add" class="btn btn-primary col-4">
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Add</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -47,8 +51,8 @@
                 </form>
             </div>
         </nav>
-        <div class="container-fluid px-5 py-3">
-            <div class="row">
+        <div class="row py-3">
+            <div class="col-12 px-4">
                 <table class="table table-primary table-hover">
                     <thead>
                         <tr>
@@ -64,7 +68,40 @@
                             <td>admin</td>
                             <td>248653179</td>
                             <td>
-                                <button type="button" class="btn btn-success">修改</button>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#managerModal" data-bs-whatever="@mdo">修改</button>
+                                <div class="modal fade" id="managerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content row justify-content-center">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">修改帳號</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body row justify-content-center">
+                                                <div class="mb-3">
+                                                    <label for="exampleDropdownFormEmail2" class="form-label">名字</label>
+                                                    <input type="text" class="form-control" placeholder="name">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleDropdownFormEmail2" class="form-label">帳號</label>
+                                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="address">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleDropdownFormPassword2" class="form-label">密碼</label>
+                                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleDropdownFormPassword2" class="form-label">電話</label>
+                                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                                                </div>
+                                                <div class="row justify-content-around">
+                                                    <input type="submit" value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
+                                                    <input type="submit" value="Add" class="btn btn-primary col-4">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <button type="button" class="btn btn-danger">刪除</button>
                             </td>
                         </tr>
