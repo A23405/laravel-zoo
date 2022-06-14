@@ -30,7 +30,7 @@ class speciesarchivesController extends Controller
         return view('dashboard', [
             'dd' => 'dd HI',
             'speciesarchives' => $this->speciesarchives->getAllspeciesarchives(),
-            'areas'=> DB::select("select * from areas"),
+            'areas' => DB::select("select * from areas"),
         ]);
     }
     public function search(Request $request)
@@ -67,28 +67,39 @@ class speciesarchivesController extends Controller
         //
         $file = $request->file('img');
         $result = $this->speciesarchives->createspeciesarchives($request, $file);
-        return response()->json([
-            'dd' => 'dd HI Store',
-            'status' => '新增成功',
-            'req' => $result,
-        ], 200);
+        // return response()->json([
+        //     'dd' => 'dd HI Store',
+        //     'status' => '新增成功',
+        //     'req' => $result,
+        // ], 200);
+        // return redirect('back_main', [
+        //     'dd' => 'dd HI Store',
+        //     'status' => '新增成功',
+        //     'req' => $result,
+        // ], 200)->with('statusbb', '成功');
+        return redirect()->route('back_main')->with('status', '成功');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $idS
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
+
         $result = $this->speciesarchives->getOne($id);
 
-        return response()->json([
+        return view('animal_file', [
             'dd' => 'dd HI Show',
             'status' => '成功',
             'req' => $result,
-        ], 200);
+            'animals' => DB::select('select a.id,b.name,b.img
+            FROM speciesarchives as a
+            INNER JOIN animalfiles as b on a.species_ = b.species_
+            where id = ?', [$id]),
+        ]);
     }
 
     /**

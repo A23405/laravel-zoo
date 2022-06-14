@@ -35,7 +35,7 @@
                         <a class="nav-link d-flex justify-content-center align-items-center" href="{{asset('area')}}">場區</a>
                     </li>
                     <li class="nav-item ms-lg-auto">
-                        <a class="nav-link d-flex justify-content-center flex-column" href="#">
+                        <a href="{{ route('login') }}" class="nav-link d-flex justify-content-center flex-column" href="#">
                             登入
                         </a>
                     </li>

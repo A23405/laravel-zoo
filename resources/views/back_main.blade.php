@@ -26,7 +26,8 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body row justify-content-center">
-                                <form class="col-12 d-flex flex-column" id="popDiv">
+                                <!--表單===============================================-->
+                                <form class="col-12 d-flex flex-column" id="popDiv" method="post" action="api/speciesarchives" Enctype="Multipart/Form-Data">
                                     <div class="row flex-row" id="top">
                                         <div class="col-6 d-flex justify-content-center" id="left">
                                             <div class="row direction-column justify-content-center">
@@ -38,42 +39,48 @@
                                                     <label for="file-upload" class="custom-file-upload">
                                                         <i class="fa fa-cloud-upload"></i> 上傳檔案
                                                     </label>
-                                                    <input id="file-upload" type="file" />
+                                                    <input id="file-upload" type="file" name="img" />
                                                 </div>
+                                                <select class="form-select my-3" aria-label="Default select example" name="name">
+                                                <option selected>俗稱</option>
+                                                <option value="One">One</option>
+                                                <option value="Two">Two</option>
+                                                <option value="Three">Three</option>
+                                            </select>
                                             </div>
                                         </div>
                                         <div class="col-6" id="right">
-                                            <select class="form-select my-3" aria-label="Default select example">
+                                            <select class="form-select my-3" aria-label="Default select example" name="phylum_">
                                                 <option selected>門</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="One">One</option>
+                                                <option value="Two">Two</option>
+                                                <option value="Three">Three</option>
                                             </select>
-                                            <select class="form-select mb-3" aria-label="Default select example">
+                                            <select class="form-select mb-3" aria-label="Default select example" name="class_">
                                                 <option selected>綱</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="One">One</option>
+                                                <option value="Two">Two</option>
+                                                <option value="Three">Three</option>
                                             </select>
-                                            <select class="form-select mb-3" aria-label="Default select example">
+                                            <select class="form-select mb-3" aria-label="Default select example" name="order_">
                                                 <option selected>目</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="One">One</option>
+                                                <option value="Two">Two</option>
+                                                <option value="Three">Three</option>
                                             </select>
-                                            <select class="form-select mb-3" aria-label="Default select example">
+                                            <select class="form-select mb-3" aria-label="Default select example" name="family_">
                                                 <option selected>科</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="One">One</option>
+                                                <option value="Two">Two</option>
+                                                <option value="Three">Three</option>
                                             </select>
-                                            <select class="form-select mb-3" aria-label="Default select example">
+                                            <select class="form-select mb-3" aria-label="Default select example" name="genus_">
                                                 <option selected>屬</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <option value="One">One</option>
+                                                <option value="Two">Two</option>
+                                                <option value="Three">Three</option>
                                             </select>
-                                            <select class="form-select mb-3" aria-label="Default select example">
+                                            <select class="form-select mb-3" aria-label="Default select example" name="conservation_level">
                                                 <option>保育等級</option>
                                                 <option>滅絕（Extinct, EX）</option>
                                                 <option>
@@ -84,47 +91,45 @@
                                                 </option>
                                                 <option>瀕危（Endangered, EN）</option>
                                                 <option>易危（Vulnerable, VU）</option>
-                                                <option>
-                                                    接近受威脅（Near Threatened, NT）
-                                                </option>
+                                                <option>接近受威脅（Near Threatened, NT）</option>
                                                 <option>暫無危機（Least Concern, LC）</option>
                                                 <option>資料不足（Data Deficient, DD）</option>
                                                 <option>未評估（Not Evaluated, NE）</option>
                                             </select>
-                                            <select class="form-select mb-3" aria-label="Default select example">
+                                            <select class="form-select mb-3" aria-label="Default select example" name="area">
                                                 <option selected>所在場區</option>
-                                                <option value="1">亞洲動物區</option>
-                                                <option value="2">非洲動物區</option>
-                                                <option value="3">奧洲動物區</option>
-                                                <option value="4">非洲洲動物區</option>
-                                                <option value="5">雨林動物區</option>
+                                                <option value="亞洲動物區">亞洲動物區</option>
+                                                <option value="非洲動物區">非洲動物區</option>
+                                                <option value="澳洲動物區">澳洲動物區</option>
+                                                <option value="非洲動物區">非洲動物區</option>
+                                                <option value="雨林動物區">雨林動物區</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row" id=" bottom">
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">物種</span>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="species_" />
                                         </div>
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">體型</span>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="body_type" />
                                         </div>
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">學名</span>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="scientific_name" />
                                         </div>
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">食性</span>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="feeding_habits" />
                                         </div>
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">分布</span>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="distribution" />
                                         </div>
                                         <div class="input-group input-group-sm mb-3">
                                             <span class="input-group-text" id="inputGroup-sizing-sm">特徵</span>
-                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="feature" />
                                         </div>
                                     </div>
                                     <div class="row justify-content-around">

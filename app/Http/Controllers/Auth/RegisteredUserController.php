@@ -33,11 +33,15 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'phone.between' => '請輸入正確的電話格式'
+        ];
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' =>['required','string','between:10,10','unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        ],$messages);
 
         $user = User::create([
             'name' => $request->name,

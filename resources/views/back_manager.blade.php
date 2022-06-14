@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="{{ asset('css/sidebars.css') }}">
+    <title>小檔案</title>
 </head>
 @extends('layouts.back_sidebar')
 @section('content')
@@ -15,6 +16,7 @@
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content row justify-content-center">
+
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">新增帳號</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -41,7 +43,11 @@
                                     <input type="submit" value="Add" class="btn btn-primary col-4">
                                 </div>
                             </div>
-
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Add</button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -51,8 +57,8 @@
                 </form>
             </div>
         </nav>
-        <div class="row py-3">
-            <div class="col-12 px-4">
+        <div class="container-fluid px-5 py-3">
+            <div class="row">
                 <table class="table table-primary table-hover">
                     <thead>
                         <tr>
@@ -63,6 +69,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($personnel as $person)
+                        <tr>
+                            <td>{{$person->name}}</td>
+                            <td>{{$person->email}}</td>
+                            <td>{{$person->phone}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success">修改</button>
+                                <button type="button" class="btn btn-danger">刪除</button>
+                            </td>
+                        </tr>
+                        @endforeach
                         <tr>
                             <td>qqnice</td>
                             <td>admin</td>
@@ -102,6 +119,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <button type="button" class="btn btn-success">修改</button>
                                 <button type="button" class="btn btn-danger">刪除</button>
                             </td>
                         </tr>
