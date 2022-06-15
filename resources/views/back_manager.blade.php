@@ -74,49 +74,6 @@
                             </td>
                         </tr>
                         @endforeach
-                        <tr>
-                            <td>qqnice</td>
-                            <td>admin</td>
-                            <td>248653179</td>
-                            <td>
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#managerModal" data-bs-whatever="@mdo">修改</button>
-                                <div class="modal fade" id="managerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content row justify-content-center">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">修改帳號</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body row justify-content-center">
-                                                <div class="mb-3">
-                                                    <label for="exampleDropdownFormEmail2" class="form-label">名字</label>
-                                                    <input type="text" class="form-control" placeholder="name">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="exampleDropdownFormEmail2" class="form-label">帳號</label>
-                                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="address">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="exampleDropdownFormPassword2" class="form-label">密碼</label>
-                                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="exampleDropdownFormPassword2" class="form-label">電話</label>
-                                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-                                                </div>
-                                                <div class="row justify-content-around">
-                                                    <input value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
-                                                    <input type="submit" value="Add" class="btn btn-primary col-4">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-success">修改</button>
-                                <button type="button" class="btn btn-danger">刪除</button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

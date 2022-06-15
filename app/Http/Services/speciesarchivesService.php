@@ -8,6 +8,19 @@ use Illuminate\Support\Facades\DB;
 
 class speciesarchivesService
 {
+    //後台搜尋
+    public function getsearchback($request)
+    {
+        if ($request->keyname != '') {
+            $result = DB::select("select *
+        FROM speciesarchives
+        WHERE species_ like '%$request->keyname%'");
+        } else {
+            $result = speciesarchives::all();
+        }
+
+        return $result;
+    }
     //後台取得全部
     public function getall()
     {
@@ -30,6 +43,7 @@ class speciesarchivesService
             left JOIN animalfiles as b on a.species_ = b.species_) as a
             GROUP by a.species_
             ORDER by a.id');
+            return $result;
         } else {
             if ($request->area != '') {
                 $sql .= " area = '$request->area'";
@@ -55,12 +69,11 @@ class speciesarchivesService
                     }
                 }
             }
-        }
-        $sql .= 'GROUP by a.species_
+            $sql .= 'GROUP by a.species_
         ORDER by a.id';
-        $result = DB::select($sql);
-
-        return $result;
+            $result = DB::select($sql);
+            return $result;
+        }
     }
     //前台查詢全部
     public function getAllspeciesarchives()
@@ -130,6 +143,28 @@ class speciesarchivesService
                 'conservation_level' => $request->conservation_level,
                 'area' => $request->area,
                 'img' => $path
+            ]
+        );
+        return $result;
+    }
+    public function updatespeciesarchivesno($request, $id)
+    {
+        $result = speciesarchives::where('id', $id)->update(
+            [
+                'species_' => $request->species_,
+                'name' => $request->name,
+                'phylum_' => $request->phylum_,
+                'class_' => $request->class_,
+                'order_' => $request->order_,
+                'family_' => $request->family_,
+                'genus_' => $request->genus_,
+                'body_type' => $request->body_type,
+                'scientific_name' => $request->scientific_name,
+                'feeding_habits' => $request->feeding_habits,
+                'feature' => $request->feature,
+                'distribution' => $request->distribution,
+                'conservation_level' => $request->conservation_level,
+                'area' => $request->area,
             ]
         );
         return $result;

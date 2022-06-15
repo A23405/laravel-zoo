@@ -56,6 +56,17 @@ class speciesarchivesController extends Controller
             'speciesarchives' => $this->speciesarchives->getall(),
         ]);
     }
+    public function backindexsearch(Request $request)
+    {
+        // return response()->json([
+        //     'dd' => 'dd HI search',
+        //     'search' => $this->speciesarchives->getsearch(),
+        // ]);
+        return view('back_main_search', [
+            'dd' => 'dd HI',
+            'speciesarchives' => $this->speciesarchives->getsearchback($request),
+        ]);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -111,17 +122,26 @@ class speciesarchivesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
         $file = $request->file('img');
-        $result = $this->speciesarchives->updatespeciesarchives($request, $id, $file);
-        if (!$result) {
-            return response()->json(['status' => "修改失敗"], 400);
+        if($file == null){
+            $result = $this->speciesarchives->updatespeciesarchivesno($request, $id);
+            
+        }else{
+            $result = $this->speciesarchives->updatespeciesarchives($request, $id, $file);
+            dd($result);
         }
-        return response()->json([
-            'dd' => 'dd HI Store',
-            'status' => '修改成功',
-            'req' => $result,
-        ], 200);
+        
+        // if (!$result) {
+        //     return response()->json(['status' => "修改失敗"], 400);
+        // }
+        // return response()->json([
+        //     'dd' => 'dd HI Store',
+        //     'status' => '修改成功',
+        //     'req' => $result,
+        // ], 200);
+        return redirect()->route('back_main')->with('status', '成功');
+
     }
 
     /**
@@ -134,13 +154,14 @@ class speciesarchivesController extends Controller
     {
         //
         $result = $this->speciesarchives->deletespeciesarchives($id);
-        if (!$result) {
-            return response()->json(['status' => "刪除失敗"], 400);
-        }
-        return response()->json([
-            'dd' => 'dd HI Store',
-            'status' => '刪除成功',
-            'req' => $result,
-        ], 200);
+        // if (!$result) {
+        //     return response()->json(['status' => "刪除失敗"], 400);
+        // }
+        // return response()->json([
+        //     'dd' => 'dd HI Store',
+        //     'status' => '刪除成功',
+        //     'req' => $result,
+        // ], 200);
+        return redirect()->route('back_main');
     }
 }

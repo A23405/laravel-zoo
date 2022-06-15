@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="{{ asset('css/sidebars.css') }}">
+    <title>小檔案</title>
 </head>
 @extends('layouts.back_sidebar')
 @section('title','物種首頁')

@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(speciesarchivesSeeder::class);
         $this->call(animalfileSeeder::class);
         $this->call(health_recordsSeeder::class);
+        $this->call(medical_recordsSeeder::class);
     }
 }

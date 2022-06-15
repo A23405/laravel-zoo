@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\areasController;
 use App\Http\Controllers\Api\speciesarchivesController;
+use App\Http\Controllers\Api\AnimalfilesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,4 @@ Route::get('speciesarchives/{id}', [speciesarchivesController::class, 'show']);
 
 Route::get('/speciesarchives_search', [speciesarchivesController::class, 'search']);
 //動物個資
+Route::post('back_individualanimal', [AnimalfilesController::class, 'store']);

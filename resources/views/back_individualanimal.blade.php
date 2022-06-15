@@ -3,11 +3,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.css">
-    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="{{ asset('css/sidebars.css') }}">
 </head>
 @extends('layouts.back_sidebar')
-@section('title','場區')
+@section('title','各檔')
 @section('content')
 <div id="wrapper">
     <div class="container-fluid direction-column px-0">
@@ -26,7 +26,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body row justify-content-center">
-                                <form class="col-12 d-flex flex-column" id="popDiv">
+                                <form class="col-12 d-flex flex-column" id="popDiv" method="post" action="api/back_individualanimal">
                                     <div class="row flex-row mb-2" id="top">
                                         <div class="col-12 d-flex justify-content-center" id="left">
                                             <div class="row direction-column justify-content-center">
@@ -38,42 +38,54 @@
                                                     <label for="file-upload" class="custom-file-upload">
                                                         <i class="fa fa-cloud-upload"></i> 上傳檔案
                                                     </label>
-                                                    <input id="file-upload" type="file" />
+                                                    <input id="file-upload" type="file" name="img"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-12" id="right">
-                                            <div class="input-group input-group-sm mb-3">
+                                            <!-- <div class="input-group input-group-sm mb-3">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
                                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
-                                            </div>
+                                            </div> -->
                                             <div class="input-group input-group-sm mb-3">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">名字</span>
-                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="name"/>
                                             </div>
                                             <div class="input-group input-group-sm mb-3">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">物種</span>
-                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+
+                                                <select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="species">
+                                                    <option value="" style="display: none">選擇</option>
+                                                    @foreach($species as $no)
+                                                    <option value={{$no -> species_}}>{{$no -> species_}}</option>
+                                                    @endforeach
+                                                    <!-- <option value="非洲動物區">非洲動物區</option>
+                                                <option value="澳洲動物區">澳洲動物區</option>
+                                                <option value="非洲動物區">非洲動物區</option>
+                                                <option value="雨林動物區">雨林動物區</option> -->
+                                                </select>
+
+                                                <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" /> -->
                                             </div>
                                             <div class="input-group input-group-sm mb-3">
                                                 <p>選擇性別</p>
                                                 <div class="form-check mx-1">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="M">
                                                     <label class="form-check-label" for="flexRadioDefault1">
-                                                        M
+                                                        M(公)
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="F" checked>
                                                     <label class="form-check-label" for="flexRadioDefault2">
-                                                        F
+                                                        F(母)
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="input-group input-group-sm mb-3">
-                                                <label for="">選擇日期：</label>
+                                                <label for="">出生日期：</label>
                                                 <div class="input-group date" id='date1'>
-                                                    <input type="date" class="form-control" />
+                                                    <input type="date" class="form-control" name="date"/>
                                                     <span class="input-group-addon">
                                                         <i class="glyphicon glyphicon-calendar"></i>
                                                     </span>
@@ -82,7 +94,7 @@
                                         </div>
                                     </div>
                                     <div class="row justify-content-around">
-                                        <input type="submit" value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
+                                        <input type="close" value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
                                         <input type="submit" value="Add" class="btn btn-primary col-4">
                                     </div>
                                 </form>
@@ -113,13 +125,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($Animalfile as $file)
                         <tr>
-                            <td>A1001</td>
-                            <td>亨利</td>
-                            <td>大熊貓</td>
-                            <td>M</td>
-                            <td>2020-06-20</td>
-                            <td>IMG</td>
+                            <td>{{$file->aid}}</td>
+                            <td>{{$file->name}}</td>
+                            <td>{{$file->species_}}</td>
+                            <td>{{$file->sex}}</td>
+                            <td>{{$file->birth}}</td>
+                            <td><img src="{{$file->img}}" width='50px'></td>
                             <td>
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#animalModal" data-bs-whatever="@mdo">修改</button>
                                 <div class="modal fade" id="animalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -199,6 +212,93 @@
                                 <button type="button" class="btn btn-danger">刪除</button>
                             </td>
                         </tr>
+                        @endforeach
+                        <!-- <tr>
+                            <td>A1001</td>
+                            <td>亨利</td>
+                            <td>大熊貓</td>
+                            <td>M</td>
+                            <td>2020-06-20</td>
+                            <td>IMG</td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#animalModal" data-bs-whatever="@mdo">修改</button>
+                                <div class="modal fade" id="animalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content row justify-content-center">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    修改個別動物
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body row justify-content-center">
+                                                <form class="col-12 d-flex flex-column" id="popDiv">
+                                                    <div class="row flex-row mb-2" id="top">
+                                                        <div class="col-12 d-flex justify-content-center" id="left">
+                                                            <div class="row direction-column justify-content-center">
+                                                                <div class="col-12 px-1" id="picture">
+                                                                   
+                                                                    <img class="img-thumbnail" id="demo" />
+                                                                </div>
+                                                                <div class="col-12 d-flex justify-content-center px-1 my-2">
+                                                                    <label for="file-upload" class="custom-file-upload">
+                                                                        <i class="fa fa-cloud-upload"></i> 上傳檔案
+                                                                    </label>
+                                                                    <input id="file-upload" type="file" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12" id="right">
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
+                                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                            </div>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <span class="input-group-text" id="inputGroup-sizing-sm">名字</span>
+                                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                            </div>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <span class="input-group-text" id="inputGroup-sizing-sm">物種</span>
+                                                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+                                                            </div>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <p>選擇性別</p>
+                                                                <div class="form-check mx-1">
+                                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                                        M
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                                        F
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <label for="">選擇日期：</label>
+                                                                <div class="input-group date" id='date1'>
+                                                                    <input type="date" class="form-control" />
+                                                                    <span class="input-group-addon">
+                                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row justify-content-around">
+                                                        <input type="submit" value="close" class="btn btn-secondary col-4" data-bs-dismiss="modal">
+                                                        <input type="submit" value="Add" class="btn btn-primary col-4">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-danger">刪除</button>
+                            </td>
+                        </tr> -->
 
                     </tbody>
                 </table>

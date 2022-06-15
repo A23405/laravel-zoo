@@ -38,7 +38,7 @@ class animalfileSeeder extends Seeder
             'species_' => '虎',
             'sex' => 'F',
             'birth' => '2019-01-10',
-            'img' => '',
+            'img' => '/storage/img/安妮.png',
         ]);
         $animalfile = Animalfile::create([
             'aid' => 'A3001',
@@ -46,7 +46,7 @@ class animalfileSeeder extends Seeder
             'species_' => '亞洲黑熊',
             'sex' => 'F',
             'birth' => '2018-03-18',
-            'img' => '',
+            'img' => '/storage/img/拉拉.png',
         ]);
         $animalfile = Animalfile::create([
             'aid' => 'A4001',
@@ -54,7 +54,7 @@ class animalfileSeeder extends Seeder
             'species_' => '臺灣獼猴',
             'sex' => 'M',
             'birth' => '2015-07-23',
-            'img' => '',
+            'img' => '/storage/img/奧克利.png',
         ]);
         $animalfile = Animalfile::create([
             'aid' => 'A5001',
@@ -62,7 +62,7 @@ class animalfileSeeder extends Seeder
             'species_' => '亞洲象',
             'sex' => 'M',
             'birth' => '2017-02-16',
-            'img' => '',
+            'img' => '/storage/img/威廉.png',
         ]);
         //B沙漠
         $animalfile = Animalfile::create([
@@ -71,7 +71,7 @@ class animalfileSeeder extends Seeder
             'species_' => '單峰駱駝',
             'sex' => 'F',
             'birth' => '2013-11-28',
-            'img' => '',
+            'img' => '/storage/img/菲菲.png',
         ]);
         //C澳洲
         $animalfile = Animalfile::create([
@@ -80,7 +80,7 @@ class animalfileSeeder extends Seeder
             'species_' => '無尾熊',
             'sex' => 'F',
             'birth' => '2012-09-06',
-            'img' => '',
+            'img' => '/storage/img/克洛伊.png',
         ]);
         //D雨林
         $animalfile = Animalfile::create([
@@ -89,7 +89,7 @@ class animalfileSeeder extends Seeder
             'species_' => '水豚',
             'sex' => 'F',
             'birth' => '2021-04-25',
-            'img' => '',
+            'img' => '/storage/img/露西.png',
         ]);
         //E非洲
         $animalfile = Animalfile::create([
@@ -98,7 +98,7 @@ class animalfileSeeder extends Seeder
             'species_' => '髯羊',
             'sex' => 'F',
             'birth' => '2009-08-29',
-            'img' => '',
+            'img' => '/storage/img/珍妮.png',
         ]);
     }
 }

@@ -5,6 +5,8 @@ use Intervention\Image\Facades\Image;
 use App\Http\Controllers\Api\areasController;
 use App\Http\Controllers\Api\speciesarchivesController;
 use App\Http\Controllers\Api\UsersController;
+use App\Http\Controllers\Api\AnimalfilesController;
+use App\Http\Controllers\Api\health_recordsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,15 +40,14 @@ Route::get('/dashboard', function () {
 });
 //首頁
 Route::get('/back_main', [speciesarchivesController::class, 'backindex'])->name('back_main');
+Route::get('/back_main_search', [speciesarchivesController::class, 'backindexsearch'])->name('back_main_search');
 //首頁新增物種
 Route::post('/speciesarchives', [speciesarchivesController::class, 'store'])->name('speciesarchives');//打不到
 // Route::post('/123', function(){
 //     return redirect('/back_main')->with('status','成功');
 // })->name('123');
 //健康紀錄
-Route::get('/back_health_record', function () {
-    return view('back_health_record');
-})->name('back_health_record');
+Route::get('/back_health_record', [health_recordsController::class, 'index'])->name('back_health_record');
 //就診紀錄
 Route::get('/back_medical_record', function () {
     return view('back_medical_record');
@@ -56,19 +57,15 @@ Route::get('/back_breed_record', function () {
     return view('back_breed_record');
 })->name('back_breed_record');
 //場區
-Route::get('/back_area', function () {
-    return view('back_area');
-})->name('back_area');
-//人員管理
-Route::get('/back_manager', function () {
-    return view('back_manager');
-})->name('back_manager');
-
+Route::get('/back_area', [areasController::class, 'backindex'])->name('back_area');
 //動物各檔
-Route::get('/back_individualanimal', function () {
-    return view('back_individualanimal');
-})->name('back_individualanimal');
+Route::get('/back_individualanimal', [AnimalfilesController::class, 'index'])->name('back_individualanimal');
 //人員管理
 Route::get('/back_manager', [UsersController::class, 'index'])->name('back_manager');
+
+
+
+
+Route::get('/123', [AnimalfilesController::class, 'store'])->name('123');
 
 require __DIR__ . '/auth.php';

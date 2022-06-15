@@ -19,6 +19,17 @@ class areasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function backindex()
+    {
+        // return response()->json([
+        //     'dd' => 'dd HI',
+        //     'areas' => $this->area->getAllarea(),
+        // ]);
+        return view('back_area', [
+            'dd' => 'dd HI',
+            'areas' => $this->area->getAllarea(),
+        ]);
+    }
     public function index()
     {
         // return response()->json([

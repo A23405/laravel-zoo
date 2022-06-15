@@ -32,7 +32,7 @@
         <div class="row">
             @foreach($animals as $animal)
         <div class="col-6 col-lg-3">
-                <a href="animal_file.html" class="m-3">
+                <a href="#" class="m-3">
                     <div class="card">
                         <div class="imgBlock">
                             <img class="card-img-top w-100 hoverImg" src="{{$animal->img}}" />
