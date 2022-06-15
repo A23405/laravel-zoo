@@ -128,14 +128,14 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="mb-1">
+                    <!-- <li class="mb-1">
                         <a href="{{route('back_breed_record')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                                 繁殖紀錄
                             </button>
                         </a>
 
-                    </li>
+                    </li> -->
                     <li class="mb-1">
                         <a href="{{route('back_area')}}">
                             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
