@@ -11,7 +11,7 @@
 @section('content')
 <div id="wrapper">
     <div class="container-fluid direction-column px-0">
-        <nav class="navbar navbar-expand-lg p-3">
+        <nav class="navbar navbar-expand-lg bg-light p-3">
             <div class="container-fluid">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
                     新增場區
@@ -78,27 +78,17 @@
             <div class="row justify-content-around">
                 <div class="col-sm-12 col-lg-5 my-3">
                     <div class="row">
-                        <div class="card py-3">
-                            <div class="row">
-                                <div class="col-md-5 d-flex align-items-center">
-                                    <div class="imgBlock">
-                                        <img class="w-100 hoverImg" src="yoyo.jpg" />
-                                    </div>
+                        <div class="card mb-3" style="max-width: 550px;background-color:#E6E6F2;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="..." class="img-fluid rounded-start" alt="...">
                                 </div>
-                                <div class="col-md-7">
-                                    <div class="card-body row">
-                                        <div class="col-12">
-                                            <h4 class="mb-2">亞洲動物區</h4>
-                                            <span>
-                                                <h4>簡介:</h4>
-                                                123545687262222525116515616515656165133333333333333333333333333333
-                                            </span>
-                                        </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h4 class="card-title">場區名稱:</h4>
+                                        <p class="card-title">場區ID:</p>
+                                        <p class="card-text">介紹:This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 d-flex justify-content-center">
                                     <button type="button" class="btn btn-success mx-1" data-bs-toggle="modal" data-bs-target="#areaModal" data-bs-whatever="@mdo">
                                         修改
                                     </button>
@@ -152,40 +142,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-danger mx-1">
-                                        刪除
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-lg-5 my-3">
-                    <div class="row">
-                        <div class="card py-3">
-                            <div class="row">
-                                <div class="col-md-5 d-flex align-items-center">
-                                    <div class="imgBlock">
-                                        <img class="w-100 hoverImg" src="yoyo.jpg" />
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body row">
-                                        <div class="col-12">
-                                            <h4 class="mb-2">亞洲動物區</h4>
-                                            <span>
-                                                <h4>簡介:</h4>
-                                                123545687262222525116515616515656165133333333333333333333333333333
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 d-flex justify-content-center">
-                                    <button type="button" class="btn btn-success mx-1">
-                                        修改
-                                    </button>
                                     <button type="button" class="btn btn-danger mx-1">
                                         刪除
                                     </button>
