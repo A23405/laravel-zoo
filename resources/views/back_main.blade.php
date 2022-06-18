@@ -68,7 +68,7 @@
                                                 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="genus_" />
                                             </div>
                                             <select class="form-select mb-3" aria-label="Default select example" name="conservation_level">
-                                                <option>保育等級</option>
+                                                
                                                 <option value="EX">滅絕（Extinct, EX）</option>
                                                 <option value="EW">
                                                     野外滅絕（Extinct In the Wild, EW）

@@ -26,7 +26,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body row justify-content-center">
-                                <form class="col-12 d-flex flex-column" id="popDiv" method="post" action="api/back_individualanimal">
+                                <form class="col-12 d-flex flex-column" id="popDiv" method="post" action="api/back_individualanimal" Enctype="Multipart/Form-Data">
                                     <div class="row flex-row mb-2" id="top">
                                         <div class="col-12 d-flex justify-content-center" id="left">
                                             <div class="row direction-column justify-content-center">

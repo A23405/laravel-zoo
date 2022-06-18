@@ -39,16 +39,16 @@ class AnimalfilesController extends Controller
     public function store(Request $request)
     {
         $file = $request->file('img');
-        dd($file,$request);
-        $x = DB::select('select x.species_,x.id,x.name,x.pid,x.total
+        $x = DB::select("select x.species_,x.id,x.name,x.pid,x.total
         from(select a.species_,a.id,b.name,b.pid,count(c.species_) as total
         FROM speciesarchives as a
         INNER JOIN areas as b on a.area = b.name
         INNER JOIN animalfiles as c on a.species_ = c.species_
         GROUP by c.species_) as x
-        where x.species_ = ?',[$request->species]);
-        $aid = $x[0]->pid.$x[0]->id.sprintf("%03d",$x[0]->total+1);
-        $result = $this->Animalfile->creatanimal($request,$aid,$file);
+        where x.species_ = '$request->species'");
+        dd($x);
+        $aid = $x[0]->pid . $x[0]->id . sprintf("%03d", $x[0]->total + 1);
+        $result = $this->Animalfile->creatanimal($request, $aid, $file);
         return redirect()->route('back_individualanimal');
     }
 

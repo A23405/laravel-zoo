@@ -17,9 +17,8 @@ class AnimalfileService
     }
 
     //建新的一筆資料
-    public function creatanimal($request, $aid ,$file)
+    public function creatanimal($request, $aid, $file)
     {
-        dd($request, $aid ,$file);
         $path =  $file->store('public/img');
         $path = str_replace("public", "/storage", $path);
         $result = Animalfile::create(
@@ -27,8 +26,8 @@ class AnimalfileService
                 'aid' => $aid,
                 'name' => $request->name,
                 'species_' => $request->species,
-                'sex' =>$request->flexRadioDefault,
-                'birth'=>$request->date,
+                'sex' => $request->flexRadioDefault,
+                'birth' => $request->date,
                 'img' => $path
             ]
         );
@@ -67,7 +66,7 @@ class AnimalfileService
         return $result;
         //先確認有此id在刪檔不然會報錯
     }
-    
+
     //取單一資料
     public function getOne($id)
     {

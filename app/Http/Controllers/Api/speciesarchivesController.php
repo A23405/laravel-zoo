@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\speciesarchivesService;
 use Illuminate\Support\Facades\DB;
+use App\Models\conservation_level;
 
 class speciesarchivesController extends Controller
 {
@@ -54,6 +55,7 @@ class speciesarchivesController extends Controller
         return view('back_main', [
             'dd' => 'dd HI back',
             'speciesarchives' => $this->speciesarchives->getall(),
+            'conservation_levels' => conservation_level::all(),
         ]);
     }
     public function backindexsearch(Request $request)
@@ -122,16 +124,14 @@ class speciesarchivesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $file = $request->file('img');
-        if($file == null){
+        if ($file == null) {
             $result = $this->speciesarchives->updatespeciesarchivesno($request, $id);
-            
-        }else{
+        } else {
             $result = $this->speciesarchives->updatespeciesarchives($request, $id, $file);
-            dd($result);
         }
-        
+
         // if (!$result) {
         //     return response()->json(['status' => "修改失敗"], 400);
         // }
@@ -141,7 +141,6 @@ class speciesarchivesController extends Controller
         //     'req' => $result,
         // ], 200);
         return redirect()->route('back_main')->with('status', '成功');
-
     }
 
     /**
